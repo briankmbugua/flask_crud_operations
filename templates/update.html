@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask crud app</title>
+</head>
+
+<body>
+    <h1>Update {{ user.name }}</h1>
+    <form action="/update/{{user.id}}" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="{{user.name}}" placeholder="update user's name">
+
+        <label for="name">About:</label>
+        <input type="text" id="about" name="about" value="{{user.about}}" placeholder="update user's about">
+
+        <input type="submit" id="submit" name="submit">
+    </form>
+</body>
+
+</html>

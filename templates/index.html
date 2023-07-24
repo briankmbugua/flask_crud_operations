@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask crud app</title>
+</head>
+<h1>Add new user to the database</h1>
+<form action="/" method="post">
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" placeholder="Enter your name">
+    <label for="about">About your self</label>
+    <input type="text" name="about" id="about" placeholder="Enter more about yourself">
+    <input type="submit">
+</form>
+<h1>All users</h1>
+{% for data in data %}
+<h1> {{ data.name }}</h1>
+<a href="{{url_for('one_user',id=data.id)}}">view more</a>
+<a href="{{url_for('delete_user', id=data.id)}}">Delete:{{ data.name }}</a>
+<a href="/update/{{data.id}}">Update:{{ data.name }}</a>
+{% endfor %}
+</body>
+
+</html>
